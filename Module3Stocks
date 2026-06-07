@@ -1,0 +1,32 @@
+using System;
+ 
+public class Stock
+{
+    public string Name;
+    public decimal Price;
+    public int Shares;
+
+    public Stock(string name, decimal price, int shares = 0)
+    {
+        Name = name;
+        Price = price;
+        Shares = shares;
+    }
+ 
+    public decimal Worth()
+    {
+        return Price * Shares;
+    }
+}
+ 
+class Program
+{
+    static void Main()
+    {
+        Stock s1 = new Stock("Apple", 189.50m, 10);
+        Stock s2 = new Stock("Tesla", 175.00m, 5);
+ 
+        Console.WriteLine(s1.Name);
+        Console.WriteLine("Price: " + s1.Price + " | Worth: " + s1.Worth());
+    }
+}
