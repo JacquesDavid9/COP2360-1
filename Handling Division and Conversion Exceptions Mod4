@@ -1,0 +1,32 @@
+using System;
+ 
+class Program
+{
+    static void Main()
+    {
+        Console.Write("First number: ");
+        string n1 = Console.ReadLine();
+        Console.Write("Second number: ");
+        string n2 = Console.ReadLine();
+ 
+        try
+        {
+            int result = Divide(Convert.ToInt32(n1), Convert.ToInt32(n2));
+            Console.WriteLine("Answer: " + result);
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Invalid input - " + ex.Message);
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("Cannot divide by zero - " + ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Something went wrong - " + ex.Message);
+        }
+    }
+ 
+    static int Divide(int a, int b) => a / b;
+}
